@@ -1,1 +1,32 @@
-<p>page3 works!</p>
+<div class="row g-3 my-5">
+  <div class="col-sm">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Write youre Todos..."
+    />
+  </div>
+  <div class="col-sm-2">
+    <button type="button" class="btn btn-dark form-control">Add</button>
+  </div>
+</div>
+
+<ul class="list-group list-group-flush">
+  <li class="list-group-item" *ngFor="let item of todos; let i = index">
+    <span ngClass="{{item.check}}">{{i+1}} - {{item.text}}</span>
+    <button
+      type="button"
+      class="btn btn-warning btn-sm mx-2 float-end"
+      (click)="checkTodo(i)"
+    >
+      -
+    </button>
+    <button
+      type="button"
+      class="btn btn-danger btn-sm mx-2 float-end"
+      (click)="removeTodo(i)"
+    >
+      X
+    </button>
+  </li>
+</ul>
