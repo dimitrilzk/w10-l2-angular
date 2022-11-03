@@ -4,10 +4,13 @@
       type="text"
       class="form-control"
       placeholder="Write youre Todos..."
+      [(ngModel)]="todo.text"
     />
   </div>
   <div class="col-sm-2">
-    <button type="button" class="btn btn-dark form-control">Add</button>
+    <button type="button" class="btn btn-dark form-control" (click)="addTodo()">
+      Add
+    </button>
   </div>
 </div>
 

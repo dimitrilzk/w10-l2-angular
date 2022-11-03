@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Todo } from '../classes/todo';
+
 
 @Component({
   templateUrl: './page3.page.html',
@@ -6,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Page3Page implements OnInit {
 
-  todos = [
+  todo = new Todo();
+
+  todos: Todo[] = [
   {
     id: 1,
     text: "Fare la spesa",
@@ -34,5 +38,10 @@ export class Page3Page implements OnInit {
   checkTodo(i:number) {
     this.todos[i].check = this.todos[i].check === "check" ? " " : "check";
   }
+  addTodo() {
+      this.todos.push(this.todo);
+      this.todo = new Todo();
+  }
+
 
 }
